@@ -1,32 +1,50 @@
+const display = (picture) => {
+    const img1 = document.getElementById('random-image')
+    img1.src = picture
+}
 
-const catFact = document.querySelector('fact')
+const catFact = document.querySelector('.fact')
+const pictures = document.querySelector('#random-image')
 
 //button refresh page setup
 const button = document.querySelector('.button')
 button.addEventListener('click', fetchResults)
 
 function fetchResults() {
+    //fetching the cat facts from the cat fact API
+    catFact.innerText = "";
     fetch('https://cat-fact.herokuapp.com/facts')
         .then(result => result.json())
         .then(details => {
             displayResults(details);
         })
-
+    //fetching the cat images from the cat images API
     fetch('https://api.thecatapi.com/v1/images/search')
         .then(result => result.json())
         .then(images => {
-            console.log("[0]", images)
+            //console.log(images);
+            const picture = images[0].url;
+            displayImages(picture);
         })
 
+    // //display the images from the cat images API
+    function displayImages(pics) {
+        pictures.style.height = "35vh"
+        pictures.src = pics
+    }
 
+    //display the cat facts from the cat fact API
+    function displayResults(details) {
+        var x = Math.floor((Math.random() * 4) + 0);
+        console.log(x);
+        let catText = details[x].text
+        console.log(catText);
+        catFact.innerText = catText
 
-
-    function displayResults(jsonData) {
-        for (let i = 0; i <= jsonData.length; i++) {
-            let catFact = jsonData[i].text
-        }
     }
 }
+
+
 
 
 

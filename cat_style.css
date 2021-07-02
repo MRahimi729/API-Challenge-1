@@ -1,0 +1,49 @@
+.header {
+    height: 150px;
+    width: 100%;
+    background-image: linear-gradient(to right, white, #fde6fa, #ee08d3);
+    border-bottom: 2px solid #fde6fa;
+}
+
+#random-image {
+    top: 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid #ee08d3;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 20px; /*sets a margin for bottom of the first image */
+  }
+
+#logo {
+    height: 150px;
+}
+
+body {
+    background-color:#fde6fa;
+    font-size: 17px;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #323232;
+}
+
+.button {
+    height: 35px;
+    width: 10%;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+    transition: all 200ms ease-out;
+}
+
+.button:hover {
+    box-shadow: 0 0 6px rgba(238, 8, 211, 1);
+}
